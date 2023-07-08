@@ -1,0 +1,26 @@
+.item {
+  padding: 1em;
+  margin: 1em;
+  /* border: 1px solid black; */
+  background-color: white;
+  border-radius: 2vmin;
+}
+
+.item_picture {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  /* border: 1px solid green; */
+}
+
+.item_info {
+  text-align: center;
+  /* border: 1px solid orange; */
+  display: block;
+}
+
+.item_picture img:hover {
+  transform: scale(1.125);
+  transition: 250ms;
+}

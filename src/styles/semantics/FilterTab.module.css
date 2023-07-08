@@ -1,0 +1,33 @@
+.filters {
+	width: 25%;
+	border-radius: 3vmin;
+	margin: 3em 0;
+	background-color: white;
+}
+
+.filters form {
+	padding: 2em;
+}
+
+.filters form div {
+	display: flex;
+	flex-direction: column;
+}
+
+.filters form div>div {
+	flex-direction: row;
+}
+
+.filters form input[type="number"] {
+	width: 100%;
+	margin: 0 1em;
+	text-align: center;
+}
+
+.filters form input[type="radio"] {
+	margin: 0 1em
+}
+
+.filters form button[type="submit"] {
+	margin: 1em auto 0 auto;
+}

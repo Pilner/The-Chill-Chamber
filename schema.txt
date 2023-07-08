@@ -1,0 +1,14 @@
+class aircon {
+  brand: String,
+  model: String,
+  type: String,
+  feature: string,
+  horsepower: double,
+  image: picture_url,
+  consumption: Integer,
+  description: String,
+  cspf: double,
+  star: integer,
+  price: double
+}
+

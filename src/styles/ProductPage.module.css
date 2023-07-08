@@ -1,0 +1,21 @@
+#productPage {
+	padding-top: 20vh;
+}
+
+.main {
+	display: flex;
+}
+
+.pictureSide {
+	width: 40%;
+	/* background-color: red; */
+	display: flex;
+	align-items: center;
+	border-radius: 5vmin;
+	overflow: hidden;
+}
+
+.infoSide {
+	width: 60%;
+	background-color: blue;
+}

@@ -1,0 +1,27 @@
+#products {
+  padding-top: 15vh;
+}
+
+#products .container > div {
+  display: flex;
+}
+
+.items {
+  width: 75%;
+  /* background-color: lightblue; */
+}
+
+.items > div {
+  margin: 3em 2em;
+  /* padding: 2em; */
+  flex-direction: column;
+}
+
+.items .item_container {
+  display: grid;
+  width: 100%;
+  /* border: 1px solid red; */
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
