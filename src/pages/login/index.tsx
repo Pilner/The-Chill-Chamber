@@ -72,7 +72,7 @@ export default function Login() {
 						<label htmlFor="rmbPassword"> Remember me</label>
 					</div>
 					<div>
-						<Link href="">
+						<Link href="/login/forgot_password">
 							<p className='body-text'>Forgot password?</p>
 						</Link>
 					</div>

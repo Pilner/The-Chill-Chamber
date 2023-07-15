@@ -84,10 +84,20 @@
 }
 
 .infoSide table {
-	width: 80%;
+	width: 75%;
 	margin: auto;
 }
 
-.infoSide table tr > th:first-child {
+.infoSide table tr > th {
 	text-align: left;
+}
+.infoSide table tr > td {
+	text-align: right;
+}
+
+.cartButton {
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+	margin: auto;
 }

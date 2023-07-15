@@ -2,7 +2,7 @@ import pool from "../../../../db";
 
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function changePassword(req: NextApiRequest, res: NextApiResponse) {
+export default async function AddAircon(req: NextApiRequest, res: NextApiResponse) {
 	const { brand, model, type, feature, cspf, star_rating, horsepower, cooling_capacity, price, image_url, description, session } = req.body;
 
 	if (session) {

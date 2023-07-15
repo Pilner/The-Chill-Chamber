@@ -75,6 +75,8 @@ export async function getServerSideProps(context: any) {
  	const csrfTokenData = await getCsrfToken(context);
 	const session = await getSession(context);
 
+	console.log(context);
+
 	if (!session) {
 		return {
 			redirect: {

@@ -16,7 +16,6 @@ export default function ChangePassword({ admin }) {
 	const [addMenu, setAddMenu] = useState<ReactElement>();
 	const [errText, setErrText] = useState('<p></p>');
 
-
 	const handleFormSubmit = async (event: any) => {
 		event.preventDefault();
 		const username = event.target.username.value;

@@ -21,8 +21,10 @@ export default function Navbar() {
 
   useEffect(() => {
     if (session) {
-      setAccountButton(React.createElement(Link, {href: "/account"}, React.createElement(FontAwesomeIcon, {icon: faUser})));
-      setCart(React.createElement(Link, {href: "/cart"}, React.createElement(FontAwesomeIcon, {icon: faShoppingCart})));
+
+      setAccountButton(React.createElement("li", {className: style.nav_items}, React.createElement(Link, {href: "/account"}, React.createElement(FontAwesomeIcon, {icon: faUser}))));
+
+      setCart(React.createElement("li", {className: style.nav_items}, React.createElement(Link, {href: "/cart"}, React.createElement(FontAwesomeIcon, {icon: faShoppingCart}))));
       
     }
   }, [session]);
@@ -49,12 +51,8 @@ export default function Navbar() {
               <li className={style.nav_items}><Link href='/products'>PRODUCTS</Link></li>
               <li className={style.nav_items}><Link href='/about'>ABOUT US</Link></li>
               <li className={style.nav_items}><Link href='/contact'>CONTACT</Link></li>
-              <li className={style.nav_items}>
-                { cart }
-              </li>
-              <li className={style.nav_items}>
-                { accountButton }
-              </li>
+              { cart }
+              { accountButton }
             </ul>
           </div>
         </nav>
