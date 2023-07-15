@@ -1,0 +1,22 @@
+.member {
+	flex: 1;
+	text-align: center;
+	color: var(--white);
+}
+
+.member .memberPic {
+	width: 40%;
+	margin: auto
+}
+
+.memberText {
+	color: var(--white)
+}
+
+.memberInfo > p:first-child {
+	background-color: #3E82E9;
+	border-radius: 1vmin;
+	margin: 0 auto 1em auto;
+	width: 50%;
+	padding: 0.5em 0;
+}

@@ -1,0 +1,11 @@
+.spacer {
+	width: 100%;
+	aspect-ratio: 1920/200;
+	background-image: url('/aboutus-transition2.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	background-size: contain;
+	z-index: 1;
+	transform: translateY(-100%);
+}

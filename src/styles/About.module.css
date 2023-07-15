@@ -5,13 +5,59 @@
 
 #companyInfo {
 	width: 80%;
+	height: 75vh;
+	margin: 1em auto;
+}
+
+#companyInfo > div  {
+	position: relative;
+	width: 50%;
+	height: 100%;
 	margin: auto;
 }
 
-.companyText {
-	text-align: center;
-	width: 40%;
-	border: 1px solid red;
-	padding: 1em;
-	border-radius: 3vmin;
+.companyPicture {
+	margin: auto;
+	position: absolute;
+	width: 100%;
+	right: 25%;
+	/* top: 50%;
+	right: 25%; */
 }
+
+
+.companyText {
+	position: absolute;
+	top: 10em;
+	left: 25%;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	background: linear-gradient(to bottom right, #1B69DE, #1B69DE66);
+	border-radius: 3vmin;
+	color: var(--white)
+}
+
+.companyText > div{
+	padding: 2em;
+	
+}
+
+.companyText .bodyText {
+	color: inherit;
+}
+
+.companyName {
+	padding: 1em 0;
+}
+
+#teamInfo {
+	min-height: 75vh;
+	background-color: #7BAAF1;
+}
+
+.memberGroup {
+	display: flex;
+	margin: 5em auto;
+}
+
