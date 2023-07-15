@@ -2,3 +2,50 @@
 	padding-top: 20vh;
 	min-height: 70vh;
 }
+
+#loginPage {
+	padding-top: 20vh;
+	min-height: 70vh;
+}
+
+#contactPage > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.contact {
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 2em;
+	border-radius: 3vmin;
+	width: 35em;
+	/* height: 5em; */
+	transition: 200ms;
+}
+
+.contact .inputsContact {
+	display: flex;
+	flex-direction: column;
+	padding: 1em 0;
+}
+
+.contact form input[type="text"],
+.contact form input[type="password"],
+.contact form input[type="email"],
+.contact form textarea {
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+
+.contact form textarea {
+	min-height: 10em;
+	max-height: 15em;
+	resize: none;
+}
+
+
+.contact form button[type="submit"] {
+	width: 100%;
+}
