@@ -1,0 +1,47 @@
+#footer {
+	height: 10vh;
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+#footer footer > div {
+	display: flex;
+	height: 10vh;
+	width: inherit;
+}
+
+.left {
+	display: flex;
+}
+
+.left > div {
+	display: flex;
+	white-space: nowrap;
+}
+
+.left > div > div {
+	height: 100%;
+	display: flex;
+}
+
+.left > div > div > img {
+	border-right: 1px solid rgba(0,0,0,0.2);
+	padding-right: 1em;
+	margin: auto;
+}
+
+.left > div > p {
+	margin: auto;
+}
+
+.right {
+	display: flex;
+	margin-left: auto;
+}
+
+.right a {
+	display: flex;
+}
+
+.footerText {
+	padding-left: 1em;
+}

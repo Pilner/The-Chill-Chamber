@@ -1,20 +1,30 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import style from '@/styles/components/Item.module.css';
+import Button, {APIButton} from '@/components/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { useSession, getSession } from 'next-auth/react';
 
 
 interface ItemProps {
   brand: string,
   model: string,
   img: string,
-  price: string,
-  rating: number
+  price: number,
+  rating: number,
+  horsepower: number
 }
 
-export default function Item({brand, model, img, price, rating}: ItemProps) {
+export default function Item({brand, model, img, price, horsepower, rating}: ItemProps) {
+
+  const getterFunction = async (data: boolean) => {
+    addToCart(model);
+    alert('Item added to cart!');
+
+  }
 
   let stars = [];
   let noStars = [];
@@ -25,6 +35,8 @@ export default function Item({brand, model, img, price, rating}: ItemProps) {
   for (let i = rating; i < 5; i++) {
     noStars[i] = i;
   }
+
+
   return (
     <div className={style.item}>
         <div className={style.item_picture}>
@@ -40,16 +52,50 @@ export default function Item({brand, model, img, price, rating}: ItemProps) {
           </Link>
         </div>
         <div className={style.item_info}>
-          <p>{`${brand} ${model}`}</p>
-          <p>{`₱${price}`}</p>
-          <p>P2,187.5 Monthly</p>
+          <p><b>{`${brand} ${model}`}</b></p>
+          <p>{`${horsepower} Horsepowers`}</p>
+          <p>{`₱${parseInt(price).toLocaleString(undefined, {minimumFractionDigits: 2})}`}</p>
           {stars.map(() => {
             return <FontAwesomeIcon color='gold' icon={faStar} />
           })}
           {noStars.map(() => {
             return <FontAwesomeIcon icon={faStar} />
           })}
+          <div className={style.buttonGroup}>
+            <Button text='More Info' url={`/products/${model}`} />
+            <APIButton text='Add to cart' onData={getterFunction} />
+          </div>
         </div>
       </div>
   )
+}
+
+async function addToCart(model) {
+  const session = await getSession();
+  
+  // console.log(session);
+  const username = session?.user?.username;
+  let data = {model, username};
+
+  try {
+    const response = await fetch('/api/post/add_cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  
+    const responseData = await response.json();
+    console.log(responseData);
+    if (response.ok) {
+    } else if (response.status === 409) {
+      throw new Error(responseData);
+    } else if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+
+  } catch(err) {
+    console.error(err);
+  }
 }

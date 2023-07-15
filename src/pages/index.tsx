@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import style from '@/styles/Home.module.css'
 import Navbar from "@/components/semantics/Navbar";
 import Button from "@/components/Button";
@@ -6,6 +7,9 @@ import Typewriter from 'typewriter-effect';
 export default function Home() {
   return (
     <>
+    <Head>
+      <title>The Chill Chamber</title>
+    </Head>
       <Navbar />
       <section id={style.front}>
         <div className={`container`}>
@@ -36,7 +40,7 @@ export default function Home() {
                 />
 
               </div>
-              <p className={`hero-text`}>at the perfect price</p>
+              <p className={`hero-text`}>for the right price</p>
               <div className={style.buttonDiv}>
                 <Button text="SHOP NOW" url="/products" />
                 <p className='hero-text'>CHOOSE THE RIGHT AC FOR YOUR HOME</p>

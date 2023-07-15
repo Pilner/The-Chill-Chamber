@@ -6,10 +6,27 @@ interface ButtonProps {
   url: string;
 }
 
-export default function button({text, url}: ButtonProps) {
+export default function Button({text, url}: ButtonProps) {
   return (
     <div className={`button-div`}>
-      <Link className={`round-button`} href={url}>{text}</Link>
+      <Link href={url}>
+        <button className={`round-button`}>{text}</button>
+      </Link>
+    </div>
+  )
+}
+
+export function APIButton({text, onData}: ButtonProps) {
+  
+  const handleClick = () => {
+    onData();
+  }
+
+  // onData(true);
+
+  return (
+    <div className={`button-div`}>
+      <button className={`round-button`} onClick={handleClick}>{text}</button>
     </div>
   )
 }

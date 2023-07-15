@@ -1,16 +1,16 @@
 #nav {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.0));
+  background-color: #e8e8e888;
   height: 15vh;
   width: 100%;
   position: absolute;
 }
 
 #navbar {
-  /* border: 1px solid red; */
   height: 100%;
   display: flex;
   width: inherit;
-  color: #EFEFEF;
+  /* color: #EFEFEF; */
+  color: var(--black);
   position: absolute;
 }
 
@@ -20,6 +20,11 @@
 
 .left img {
   transition: 200ms;
+}
+
+.left .logoText {
+  white-space: nowrap;
+  margin-left: 0.5em;
 }
 
 .left > a {
@@ -43,7 +48,7 @@
 }
 
 .left img:hover,
-.navlinks > .nav_items:hover,
+.nav_items:hover,
 .right > form > button:hover,
 .right > a:hover {
   transition: 200ms;
@@ -61,17 +66,58 @@
   transition: 200ms;
 }
 
+.right form {
+  display: flex;
+}
 
-.right > form > input[type="text"] {
+
+.right form input[type="text"] {
   font-size: 1em;
   padding: 0 1em;
   width: 20em;
   height: 2.5em;
   border-radius: 3vmin;
-  border: 1px solid white;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
-.right > form > input[type="text"]:focus {
-  outline: none;
+.right form input[type="text"]::placeholder {
+  text-align: center;
 }
 
+.right > form > input[type="text"]:focus  {
+  outline: 1px solid var(--black);
+}
+
+.right .navInfo {
+  list-style-type: none;
+  display: flex;
+  white-space: nowrap;
+}
+
+.right .navInfo .nav_items {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0 2em;
+  width: 100%;
+  margin: auto;
+  transition: 200ms;
+}
+
+#navAccount {
+  background-color: var(--navbarBlue);
+  color: var(--white);
+  height: 15vh;
+  width: 100%;
+  /* position: absolute; */
+
+}
+
+#navbarAccount {
+  
+  height: 100%;
+  display: flex;
+  /* color: #EFEFEF; */
+  color: var(--white);
+  /* position: absolute; */
+
+}

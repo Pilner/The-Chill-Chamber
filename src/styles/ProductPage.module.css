@@ -1,21 +1,93 @@
 #productPage {
 	padding-top: 20vh;
+	min-height: 70vh;
 }
 
 .main {
 	display: flex;
+	justify-content: space-around;
 }
 
 .pictureSide {
-	width: 40%;
+	width: 35%;
+	max-height: 70vh;
 	/* background-color: red; */
 	display: flex;
 	align-items: center;
 	border-radius: 5vmin;
-	overflow: hidden;
+	/* overflow: hidden; */
+}
+
+.pictureSide > div {
+	padding: 1em;
+	width: 100%;
+	height: 100%;
+	/* border: 1px solid red; */
+	background-color: white;
+	border-radius: 3vmin;
+	flex-direction: column;
+}
+
+.pictureSide > div {
+	text-align: center;
+}
+
+.picturePart {
+	height: 90%;
+}
+
+.captionPart {
+	height: 10%;
+	width: 80%;
+	margin: auto;
+	/* background-color: red; */
+	border-top: 3.5px solid rgba(0,0,0,0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.captionPart p {
+	font-weight: bold;
 }
 
 .infoSide {
-	width: 60%;
-	background-color: blue;
+	width: 55%;
+	background-color: white;
+	border-radius: 5vmin;
+}
+
+.infoSide > div {
+	padding: 2em;
+}
+
+.infoSide > div > div {
+	padding: 1em 0;
+}
+
+.itemTitle {
+	color: black;
+	text-align: center;
+	font-size: 5em;
+}
+
+.itemText {
+	color: black;
+	text-align: justify;
+	font-size: 1.5em;
+}
+
+.itemText, .infoSide table p {
+	color: black;
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+.infoSide table {
+	width: 80%;
+	margin: auto;
+}
+
+.infoSide table tr > th:first-child {
+	text-align: left;
 }

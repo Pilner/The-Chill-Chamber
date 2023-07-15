@@ -1,0 +1,123 @@
+#accountPage {
+	/* padding-top: 20vh; */
+	min-height: 75vh;
+}
+
+#accountPage .container > div {
+	display: flex;
+}
+
+.left {
+	flex: 1;
+	/* border: 1px solid red; */
+	border-right: 1px solid rgba(0,0,0,0.2);
+	min-height: 75vh;
+}
+
+.left a > div {
+	transition: 200ms;
+	padding: 1em;
+	/* margin: 1em 0 0 1em; */
+	margin: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	border-radius: 1vmin;
+	/* display: flex; */
+}
+
+.left a > div:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+
+.left a > .active {
+	background-color: rgba(0,0,0,0.1);
+}
+
+.right {
+	flex: 2;
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+.right .infoTable {
+	/* width: 60%; */
+	/* margin: auto; */
+	/* display: flex;
+	justify-content: center; */
+	margin: 2em;
+}
+
+.right .infoTable tr > * {
+	/* border: 1px solid black; */
+}
+.right .infoTable tr > th {
+	text-align: left;
+	padding: 0 5em 0 0;
+}
+.right .infoTable tr > td {
+	text-align: center;
+}
+
+.right .infoTable p {
+	font-size: 1.5em;
+}
+
+.right .login {
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 2em;
+	border-radius: 3vmin;
+	width: 25em;
+	/* height: 5em; */
+	transition: 200ms;
+	margin: 2em auto;
+
+}
+
+.login .inputsLogin {
+	display: flex;
+	flex-direction: column;
+	padding: 1em 0;
+}
+
+.login form input[type="text"],
+.login form input[type="password"] {
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+
+.login form button[type="submit"] {
+	width: 100%;
+}
+
+.login .subLogin {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0 1em;
+}
+
+.login .subLogin div {
+	display: inline;
+}
+
+.login .additionalLogin {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 0 0 0;
+}
+
+.login .subLogin input[type="checkbox"],
+.login .subLogin label {
+	cursor: pointer;
+}
+
+.regLogin p {
+	padding: 1em 0 0 0;
+	text-align: center;
+}
+
+.errorText {
+	color: red;
+}

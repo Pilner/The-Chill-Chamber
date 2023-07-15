@@ -6,6 +6,10 @@
   display: flex;
 }
 
+#products .container > div > div:first-child {
+  margin-top: 6em;
+}
+
 .items {
   width: 75%;
   /* background-color: lightblue; */

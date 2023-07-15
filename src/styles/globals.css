@@ -2,6 +2,10 @@
 :root {
   --main-font: "Nunito";
   --white: #EFEFEF;
+  --black: #1F1F1F;
+  --blue: #1B69DE;
+  --buttonColor: #2970DB;
+  --navbarBlue: #4887e5;
 
 }
 /* VARIABLES */
@@ -12,9 +16,13 @@
 	padding: 0;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 body {
 	font-family: var(--main-font);
-  background-color: #f2efeb;
+  background-color: white;
 }
 
 a {
@@ -31,6 +39,25 @@ button {
 	cursor: pointer;
 	outline: inherit;
 }
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea, select {
+	border-radius: 0.5vmin;
+	border: 1px solid rgba(0,0,0,0.4);
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus, select:focus {
+	outline: 1px solid rgba(0,0,0,0.4);
+}
+
+textarea {
+	font-family: var(--main-font);
+}
+
 /* SETUP */
 
 /* GENERAL */
@@ -61,14 +88,26 @@ button {
 	color: black;
 	font-size: 1.5em;
 	font-weight: bold;
-	margin: 1em 0;
+	/* margin: 1em 0; */
 
 }
 .body-text {
 	color: black;
 	font-size: 1.2em;
-	margin: 1em 0;
+	/* margin: 1em 0; */
 }
+.logoText {
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+}
+.section-title{
+  font-size: 2em;
+  font-weight: bold;
+}
+
 /* TYPOGRAPHY */
 
 /* BUTTON */
@@ -80,7 +119,6 @@ button {
 	font-weight: 400;
 	border: none;
 	border-radius: 5px;
-	margin: 0 .5em;
 	cursor: pointer;
 }
 .round-button:hover {

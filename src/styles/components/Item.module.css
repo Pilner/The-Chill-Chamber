@@ -1,7 +1,7 @@
 .item {
   padding: 1em;
   margin: 1em;
-  /* border: 1px solid black; */
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: white;
   border-radius: 2vmin;
 }
@@ -12,15 +12,27 @@
   aspect-ratio: 1/1;
   overflow: hidden;
   /* border: 1px solid green; */
+  margin-bottom: .5em;
 }
 
 .item_info {
   text-align: center;
-  /* border: 1px solid orange; */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
+  padding-top: .5em;
 }
 
 .item_picture img:hover {
   transform: scale(1.125);
   transition: 250ms;
+}
+
+.buttonGroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.buttonGroup > * {
+  margin-bottom: 1em;
 }

@@ -1,0 +1,54 @@
+.item {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	height: 7.5em;
+	margin: 1em 0;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 2vmin;
+}
+
+.item > div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item > div:not(:first-child) {
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+
+.item > .model > div {
+}
+
+.picture > div {
+	height: 100%;
+}
+
+.picture {
+	flex: 3;
+}
+.model {
+	flex: 4;
+}
+.brand {
+	flex: 2;
+
+}
+.price {
+	flex: 2;
+}
+.quantity {
+	flex: 1;
+}
+.totalPrice {
+	flex: 2;
+}
+.delete {
+	flex: 1;
+}
+.delete button {
+	background-color: red;
+}

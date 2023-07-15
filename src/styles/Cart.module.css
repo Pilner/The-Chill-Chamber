@@ -1,0 +1,86 @@
+#cart {
+	padding-top: 15vh;
+	min-height: 75vh;
+}
+
+#cart > div > div {
+	margin-top: 2em;
+	display : flex;
+	justify-content: space-between;
+}
+
+
+.itemSide {
+	width: 62.5%;
+	/* border: 1px solid red; */
+}
+
+.itemSide > div {
+	width: 100%;
+}
+
+.itemSide .header {
+	display: flex;
+	text-align: center;
+	margin: 1em 0;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.itemSide .header p {
+	font-weight: bold;
+}
+
+.itemSide .picture {
+	flex: 3;
+}
+.itemSide .model {
+	flex: 4;
+}
+.itemSide .brand {
+	flex: 2;
+
+}
+.itemSide .price {
+	flex: 2;
+}
+.itemSide .quantity {
+	flex: 1;
+}
+.itemSide .totalPrice {
+	flex: 2;
+}
+.itemSide .delete {
+	flex: 1;
+}
+
+.itemSide .header p:not(:first-child) {
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+
+
+
+
+.infoSide {
+	width: 32.5%;
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+.infoSide > div {
+	padding: 1em;
+}
+
+.infoSide > div .info {
+	display: flex;
+	justify-content: space-between;
+	margin: 1em 0;
+}
+
+.infoSide > div .info > div:last-child {
+	text-align: right;
+}
+
+.infoSide > div > div:last-child {
+	display: flex;
+	justify-content: center;
+}

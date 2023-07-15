@@ -1,0 +1,17 @@
+#aboutPage {
+	padding-top: 20vh;
+	min-height: 70vh;
+}
+
+#companyInfo {
+	width: 80%;
+	margin: auto;
+}
+
+.companyText {
+	text-align: center;
+	width: 40%;
+	border: 1px solid red;
+	padding: 1em;
+	border-radius: 3vmin;
+}

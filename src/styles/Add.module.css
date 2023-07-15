@@ -1,0 +1,60 @@
+#addPage {
+	min-height: 75vh;
+}
+
+.addForm {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 3vmin;
+	width: 40%;
+	margin: 2em auto;
+}
+
+.containerForm {
+	width: 90%;
+	margin: auto;
+}
+
+.formTitle {
+	background-color: var(--blue);
+	border-radius: 3vmin 3vmin 0 0;
+	padding: 1em 0;
+}
+
+.formTitle p {
+	text-align: center;
+	color: white;
+	font-weight: normal;
+}
+
+.formInputs .containerForm > div {
+	margin: 1em 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.formInputs .containerForm input,
+.formInputs .containerForm textarea {
+	padding: 0.5em;
+	/* margin-bottom: 0.5em; */
+}
+
+.formInputs .containerForm textarea {
+	min-height: 5em;
+	max-height: 10em;
+	resize: none;
+}
+
+.formSubmit {
+	margin-bottom: 1em;
+}
+
+.formSubmit .containerForm {
+	text-align: center;
+}
+
+.containerForm select {
+	padding: 0.5em;
+}

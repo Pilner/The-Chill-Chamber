@@ -1,0 +1,12 @@
+#successPage {
+	padding-top: 20vh;
+	min-height: 70vh;
+}
+
+#successPage > div {
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 3vmin;
+	padding: 2em 2em 0 2em;
+	width: 25vw;
+	text-align: center;
+}
