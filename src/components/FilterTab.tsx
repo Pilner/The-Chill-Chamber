@@ -44,11 +44,11 @@ export default function FilterTab({ onData }) {
 					  <label htmlFor="any_type">Any</label>
 				  </div>
 				  <div>
-					  <input type="radio" value="split" id="split_type" name="type" />
+					  <input type="radio" value="Split Type" id="split_type" name="type" />
 					  <label htmlFor="split_type">Split Type</label>
 				  </div>
 				  <div>
-					  <input type="radio" value="window" id="window_type" name="type" />
+					  <input type="radio" value="Window Type" id="window_type" name="type" />
 					  <label htmlFor="window_type">Window Type</label>
 				  </div>
 			  </div>
@@ -60,11 +60,11 @@ export default function FilterTab({ onData }) {
 					  <label htmlFor="any_feature">Any</label>
 				  </div>
 				  <div>
-					  <input type="radio" value="non_inverter" id="non_inverter" name="feature" />
+					  <input type="radio" value="Non-Inverter" id="non_inverter" name="feature" />
 					  <label htmlFor="non_inverter">Non-Inverter</label>
 				  </div>
 				  <div>
-					  <input type="radio" value="inverter" id="inverter" name="feature" />
+					  <input type="radio" value="Inverter" id="inverter" name="feature" />
 					  <label htmlFor="inverter">Inverter</label>
 				  </div>
 			  </div>
