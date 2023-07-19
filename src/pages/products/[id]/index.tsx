@@ -212,7 +212,7 @@ export async function getServerSideProps(context: any) {
 	
 	try {
 		const [response1, response2] = await Promise.all([
-			fetch (`${baseURL}/api/get/get_aircon?model=${id}`, {
+			fetch (`${baseURL}/api/get/get_aircon?aircon_id=${id}`, {
 				method: 'GET'
 			}),
 

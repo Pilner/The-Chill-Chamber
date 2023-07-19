@@ -12,6 +12,7 @@ import { useSession, getSession } from 'next-auth/react';
 
 
 interface ItemProps {
+  aircon_id: number,
   brand: string,
   model: string,
   img: string,
@@ -20,7 +21,7 @@ interface ItemProps {
   horsepower: number
 }
 
-export default function Item({brand, model, img, price, horsepower, rating}: ItemProps) {
+export default function Item({aircon_id, brand, model, img, price, horsepower, rating}: ItemProps) {
 
   const getterFunction = async (data: boolean) => {
     addToCart(model);
@@ -42,7 +43,7 @@ export default function Item({brand, model, img, price, horsepower, rating}: Ite
   return (
     <div className={style.item}>
         <div className={style.item_picture}>
-        <Link href={`/products/${model}`}>
+        <Link href={`/products/${aircon_id}`}>
           <Image
             src={img}
             width={0}

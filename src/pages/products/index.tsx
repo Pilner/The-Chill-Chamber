@@ -45,6 +45,7 @@ export default function Product({airconsData}) {
                   {aircons.map((aircon) => {
                     return (
                       <Item
+                      aircon_id={aircon.aircon_id}
                       key={aircon.aircon_id}
                       brand={aircon.brand}
                       model={aircon.model}

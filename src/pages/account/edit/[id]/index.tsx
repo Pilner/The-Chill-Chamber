@@ -14,19 +14,7 @@ import { useSession, getSession } from 'next-auth/react';
 
 
 export default function EditAirconPage({airconData}: any) {
-	const [aircon, setAircon] = useState({
-		brand: 'brand',
-		model: 'model',
-		type: 'type',
-		feature: 'feature',
-		cspf: 0,
-		price: "0",
-		horsepower: 0,
-		cooling_capacity: "0",
-		star_rating: 0,
-		description: 'description',
-		image_url: 'image_url',
-	});
+	const [aircon, setAircon] = useState({});
 	const router = useRouter();
 
 	const {data: session} = useSession();
@@ -76,7 +64,7 @@ export default function EditAirconPage({airconData}: any) {
 	useEffect(() => {
 		setAircon(airconData);
 	}, [airconData]);
-	// console.log(aircon);
+	console.log(aircon);
 
 	return (
 		<>
@@ -187,7 +175,7 @@ export async function getServerSideProps(context: any) {
 	// fetch data from api /api/get/get_aircon
 	let airconData = null;
 	try {
-		const response = await fetch(`${baseURL}/api/get/get_aircon?model=${id}`, {
+		const response = await fetch(`${baseURL}/api/get/get_aircon?aircon_id=${id}`, {
 			method: 'GET',
 		});
 
