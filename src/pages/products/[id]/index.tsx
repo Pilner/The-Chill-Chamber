@@ -18,10 +18,11 @@ import React, { ReactElement, useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
 
-export default function ProductPage({ airconData, response, admin }: any) {
+export default function ProductPage({ airconData, response, admin, session }: any) {
 
 	// console.log(airconData);
 	const [editButton, setEditButton] = useState<ReactElement>()
+	const [cartButton, setCartButton] = useState<ReactElement>()
 
 	const getterFunction = async (data: boolean) => {
 		addToCart(aircon.model);
@@ -54,7 +55,11 @@ export default function ProductPage({ airconData, response, admin }: any) {
 			setEditButton(React.createElement(
 				Button, {text: 'Edit', url: `/account/edit/${id}`}
 			));
-				
+		}
+		if (session) {
+			setCartButton(React.createElement(
+				APIButton, {text: 'Add to cart', onData: getterFunction}
+			));
 		}
 		
 	}, [airconData, admin, id])
@@ -155,7 +160,9 @@ export default function ProductPage({ airconData, response, admin }: any) {
 							<>
 							{editButton}
 							</>
-							<APIButton text='Add to cart' onData={getterFunction} />
+							<>
+							{cartButton}
+							</>
 						</div>
 
 					</div>
