@@ -7,7 +7,7 @@ import Button, {APIButton} from '@/components/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import { useSession, getSession } from 'next-auth/react';
 
 
@@ -22,6 +22,8 @@ interface ItemProps {
 }
 
 export default function Item({aircon_id, brand, model, img, price, horsepower, rating}: ItemProps) {
+  const {data: session} = useSession();
+	const [cartButton, setCartButton] = useState<ReactElement>()
 
   const getterFunction = async (data: boolean) => {
     addToCart(model);
@@ -38,6 +40,14 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
   for (let i = rating; i < 5; i++) {
     noStars[i] = i;
   }
+
+  useEffect(() => {
+    if (session) {
+      setCartButton(React.createElement(
+        APIButton, {text: 'Add to cart', onData: getterFunction}
+      ));
+    }
+  })
 
 
   return (
@@ -65,8 +75,10 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
             return <FontAwesomeIcon key={i} icon={faStar} />
           })}
           <div className={style.buttonGroup}>
-            <Button text='More Info' url={`/products/${model}`} />
-            <APIButton text='Add to cart' onData={getterFunction} />
+            <Button text='More Info' url={`/products/${aircon_id}`} />
+            <>
+            {cartButton}
+            </>
           </div>
         </div>
       </div>
