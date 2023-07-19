@@ -111,9 +111,11 @@ async function getFilteredAircons(data) {
 
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
+  const baseURL = `http://${context.req.headers.host}`;
+
   try {
-    let response = await fetch (`${process.env.URL}/api/get/get_aircons`, {
+    let response = await fetch (`${baseURL}/api/get/get_aircons`, {
       method: 'GET'
     })
 

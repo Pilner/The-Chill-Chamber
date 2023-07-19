@@ -201,17 +201,19 @@ export async function getServerSideProps(context: any) {
 	const csrfTokenData = await getCsrfToken(context);
 	const session = await getSession(context);
 	const {params} = context;
-	const {id} = params;	
+	const {id} = params;
+	const baseURL = `http://${context.req.headers.host}`;
+
 	
 	// console.log(id);
 	
 	try {
 		const [response1, response2] = await Promise.all([
-			fetch (`${process.env.URL}/api/get/get_aircon?model=${id}`, {
+			fetch (`${baseURL}/api/get/get_aircon?model=${id}`, {
 				method: 'GET'
 			}),
 
-			fetch (`${process.env.URL}/api/get/get_user?username=${session?.user?.username}`, {
+			fetch (`${baseURL}/api/get/get_user?username=${session?.user?.username}`, {
 					method: 'GET',
 			})
 		]);

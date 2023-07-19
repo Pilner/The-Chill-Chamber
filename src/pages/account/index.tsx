@@ -74,6 +74,7 @@ export async function getServerSideProps(context: any) {
 	const providersData = await getProviders();
  	const csrfTokenData = await getCsrfToken(context);
 	const session = await getSession(context);
+	const baseURL = `http://${context.req.headers.host}`;
 
 	console.log(context);
 
@@ -87,7 +88,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		let response = await fetch (`${process.env.URL}/api/get/get_user?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_user?username=${session.user.username}`, {
 		  	method: 'GET',
 		})
 	

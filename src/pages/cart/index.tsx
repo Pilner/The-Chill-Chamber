@@ -150,6 +150,7 @@ async function checkoutCart() {
 
 export async function getServerSideProps(context: any) {
 	const session = await getSession(context);
+	const baseURL = `http://${context.req.headers.host}`;
 
 	if (!session) {
 		return {
@@ -161,7 +162,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		const response = await fetch(`${process.env.URL}/api/get/get_cart?username=${session?.user?.username}`, {
+		const response = await fetch(`${baseURL}/api/get/get_cart?username=${session?.user?.username}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'

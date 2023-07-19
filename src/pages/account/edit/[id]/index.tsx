@@ -158,6 +158,8 @@ export async function getServerSideProps(context: any) {
  	const csrfTokenData = await getCsrfToken(context);
 	const {id} = context.params
 	const session = await getSession(context);
+	const baseURL = `http://${context.req.headers.host}`;
+
 
 	if (!session) {
 		return {
@@ -171,7 +173,7 @@ export async function getServerSideProps(context: any) {
 	// fetch data from api /api/get/get_aircon
 	let airconData = null;
 	try {
-		const response = await fetch(`${process.env.URL}/api/get/get_aircon?model=${id}`, {
+		const response = await fetch(`${baseURL}/api/get/get_aircon?model=${id}`, {
 			method: 'GET',
 		});
 

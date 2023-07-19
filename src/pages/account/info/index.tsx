@@ -108,8 +108,9 @@ export default function Account({personalInfo, admin}) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
 	const session = await getSession(context);
+	const baseURL = `http://${context.req.headers.host}`;
 
 	let personalInfo;
 
@@ -139,7 +140,7 @@ export async function getServerSideProps(context) {
 	  }
 
 	  try {
-		let response = await fetch (`${process.env.URL}/api/get/get_user?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_user?username=${session.user.username}`, {
 		  	method: 'GET',
 		})
 	
