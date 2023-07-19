@@ -54,7 +54,7 @@ export default function ProductPage({ airconData, response, admin }: any) {
 				
 		}
 		
-	}, [airconData, admin])
+	}, [airconData, admin, id])
 	let stars = [],
 	noStars = [];
 	for (let i = 0; i < aircon.star_rating; i++) {

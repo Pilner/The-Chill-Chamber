@@ -78,7 +78,7 @@ export default function Cart({cartData}) {
 
 						</div>
 						{cartData.map((item) => {
-							return (<CartItem item={item} onData={getterFunction} />)
+							return (<CartItem item={item} onData={getterFunction} key={item.aircon_id} />)
 						})}
 					</div>
 				</div>
