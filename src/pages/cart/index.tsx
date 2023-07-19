@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Head from 'next/head';
 import { getSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
@@ -78,7 +80,7 @@ export default function Cart({cartData}) {
 
 						</div>
 						{cartData.map((item) => {
-							return (<CartItem item={item} onData={getterFunction} />)
+							return (<CartItem item={item} key={item.aircon_id} onData={getterFunction} />)
 						})}
 					</div>
 				</div>

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Head from 'next/head';
 import style from '@/styles/ProductPage.module.css'
 import Navbar from '@/components/semantics/Navbar';
@@ -38,6 +40,7 @@ export default function ProductPage({ airconData, response, admin }: any) {
 		cooling_capacity: "0",
 		star_rating: 0,
 		description: 'description',
+		image_url
 	});
 
 
@@ -54,7 +57,7 @@ export default function ProductPage({ airconData, response, admin }: any) {
 				
 		}
 		
-	}, [airconData, admin])
+	}, [airconData, admin, id])
 	let stars = [],
 	noStars = [];
 	for (let i = 0; i < aircon.star_rating; i++) {

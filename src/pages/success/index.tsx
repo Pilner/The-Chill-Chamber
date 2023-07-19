@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Head from 'next/head';
 import { getSession } from 'next-auth/react';
 

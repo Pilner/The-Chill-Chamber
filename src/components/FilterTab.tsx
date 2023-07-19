@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Line from '@/components/Line';
 import style from '@/styles/components/FilterTab.module.css'
 

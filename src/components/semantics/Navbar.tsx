@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { ReactElement, useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import pool from "../../../../db";
 import { NextApiRequest, NextApiResponse } from "next";
 

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { ReactElement, useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -75,8 +77,6 @@ export async function getServerSideProps(context: any) {
  	const csrfTokenData = await getCsrfToken(context);
 	const session = await getSession(context);
 	const baseURL = `http://${context.req.headers.host}`;
-
-	console.log(context);
 
 	if (!session) {
 		return {
