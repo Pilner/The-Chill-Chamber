@@ -16,7 +16,7 @@ export default function Member({url, role, name}: MemberProps) {
 			src={url}
 			width={0}
 			height={0}
-			style={{width: '100%', height: '100%', objectFit: 'contain', borderRadius: "50%"}}
+			style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: "50%", aspectRatio: "1/1"}}
 			unoptimized={true}
 			alt="About us background"
 		/>
