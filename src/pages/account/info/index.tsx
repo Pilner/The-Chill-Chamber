@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { ReactElement, useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';

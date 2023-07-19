@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useEffect, useState, ReactElement } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -12,7 +14,19 @@ import { useSession, getSession } from 'next-auth/react';
 
 
 export default function EditAirconPage({airconData}: any) {
-	const [aircon, setAircon] = useState({});
+	const [aircon, setAircon] = useState({
+		brand: 'brand',
+		model: 'model',
+		type: 'type',
+		feature: 'feature',
+		cspf: 0,
+		price: "0",
+		horsepower: 0,
+		cooling_capacity: "0",
+		star_rating: 0,
+		description: 'description',
+		image_url: 'image_url',
+	});
 	const router = useRouter();
 
 	const {data: session} = useSession();

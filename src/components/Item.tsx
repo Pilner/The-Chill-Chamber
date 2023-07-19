@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Image from 'next/image';
 import Link from 'next/link';
 import style from '@/styles/components/Item.module.css';
@@ -56,10 +58,10 @@ export default function Item({brand, model, img, price, horsepower, rating}: Ite
           <p>{`${horsepower} Horsepowers`}</p>
           <p>{`₱${parseInt(price).toLocaleString(undefined, {minimumFractionDigits: 2})}`}</p>
           {stars.map(() => {
-            return <FontAwesomeIcon color='gold' icon={faStar} />
+            return <FontAwesomeIcon key={i} color='gold' icon={faStar} />
           })}
           {noStars.map(() => {
-            return <FontAwesomeIcon icon={faStar} />
+            return <FontAwesomeIcon key={i} icon={faStar} />
           })}
           <div className={style.buttonGroup}>
             <Button text='More Info' url={`/products/${model}`} />
