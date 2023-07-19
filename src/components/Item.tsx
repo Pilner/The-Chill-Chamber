@@ -57,10 +57,10 @@ export default function Item({brand, model, img, price, horsepower, rating}: Ite
           <p><b>{`${brand} ${model}`}</b></p>
           <p>{`${horsepower} Horsepowers`}</p>
           <p>{`₱${parseInt(price).toLocaleString(undefined, {minimumFractionDigits: 2})}`}</p>
-          {stars.map(() => {
+          {stars.map((star, i) => {
             return <FontAwesomeIcon key={i} color='gold' icon={faStar} />
           })}
-          {noStars.map(() => {
+          {noStars.map((star, i) => {
             return <FontAwesomeIcon key={i} icon={faStar} />
           })}
           <div className={style.buttonGroup}>
