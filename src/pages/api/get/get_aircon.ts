@@ -4,15 +4,15 @@ import { getSession } from 'next-auth/react';
 
 export default async function getAircons(req: NextApiRequest, res: NextApiResponse) {
 
-	const { model } = req.query;
+	const { aircon_id } = req.query;
 
 	try {
 		const client = await pool.connect();
-		const aircon = await client.query(`SELECT * FROM aircons WHERE model = $1`, [model]);
+		const aircon = await client.query(`SELECT * FROM aircons WHERE aircon_id = $1`, [aircon_id]);
 		client.release();
 
 		if (aircon.rowCount === 0) {
-			res.status(404).send(`${model} does not exist!}`);
+			res.status(404).send(`${aircon_id} does not exist!}`);
 		} else {
 			res.send(aircon.rows[0]);
 		}

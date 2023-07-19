@@ -212,7 +212,7 @@ export async function getServerSideProps(context: any) {
 	
 	try {
 		const [response1, response2] = await Promise.all([
-			fetch (`${baseURL}/api/get/get_aircon?model=${id}`, {
+			fetch (`${baseURL}/api/get/get_aircon?aircon_id=${id}`, {
 				method: 'GET'
 			}),
 
@@ -221,17 +221,41 @@ export async function getServerSideProps(context: any) {
 			})
 		]);
 
-
-
-		// console.log(`${process.env.URL}/api/get/get_aircon?model=${id}`);
-		// console.log(`${process.env.URL}/api/get/get_user?username=${session?.user?.username}`);
-
-		if (response1.ok && response2.ok) {
+		if (response1.ok) {
 			let airconData = await response1.json();
-			let user = await response2.json();
+			
+			if (response2.ok) {
+				let user;
 
+				try {
+					user = await response2.json();
+				} catch (err) {
+					return {props: {airconData }}
+				}
+				
+				
+				if (user.user_type !== 'admin') {
+					return {
+						props: {
+							airconData,
+							admin: false,
+							user,
+							session
+						}
+					}
+				} else {
+					return {
+						props: {
+							airconData,
+							admin: true,
+							user,
+							session
+						}
+					}
+				}
 
-			if (user.user_type !== 'admin') {
+			} else {
+
 				return {
 					props: {
 						airconData,
@@ -240,22 +264,8 @@ export async function getServerSideProps(context: any) {
 						session
 					}
 				}
-
-			} else {
-				return {
-					props: {
-						airconData,
-						admin: true,
-						user,
-						session
-					}
-				}
 			}
-				// return {
-				// 	props: {
-				// 		airconData,
-				// 	}
-				// }
+
 
 		} else {
 			throw new Error(`${response1.status} ${response1.statusText}`);
