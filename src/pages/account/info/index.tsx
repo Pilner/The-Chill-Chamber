@@ -126,7 +126,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		let response = await fetch (`${process.env.URL}/api/get/get_personal_info?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_personal_info?username=${session.user.username}`, {
 		  method: 'GET',
 		})
 	
