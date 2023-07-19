@@ -81,6 +81,7 @@ export default function ProductPage({ airconData, response, admin }: any) {
 						<div className={style.picturePart}>
 							<Image
 								src={aircon.image_url || '#'}
+								key={aircon.aircon_id}
 								width={0}
 								height={0}
 								style={{height: "100%", width: "100%", objectFit: "contain"}}

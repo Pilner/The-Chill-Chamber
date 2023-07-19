@@ -80,5 +80,6 @@ const options: NextAuthOptions = {
 };
 
 const handler = NextAuth(options);
+const Output = (req: NextApiRequest, res: NextApiResponse) => NextAuth(req, res, options)
 
-export default (req: NextApiRequest, res: NextApiResponse) => NextAuth(req, res, options);
+export default Output;
