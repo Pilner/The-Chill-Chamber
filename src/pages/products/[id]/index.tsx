@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Head from 'next/head';
 import style from '@/styles/ProductPage.module.css'
 import Navbar from '@/components/semantics/Navbar';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ReactElement } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import style from '@/styles/Account.module.css'
@@ -10,8 +10,14 @@ import { useRouter } from 'next/router';
 import { getProviders, getCsrfToken } from 'next-auth/react';
 import { useSession, getSession } from 'next-auth/react';
 
+interface User {
+	name?: string | null | undefined;
+	email?: string | null | undefined;
+	username: string;
+}  
 
-export default function ChangePassword({ admin }) {
+
+export default function ChangePassword({ admin }: any) {
 	const {data: session} = useSession();
 	const [addMenu, setAddMenu] = useState<ReactElement>();
 	const [errText, setErrText] = useState('<p></p>');
@@ -160,6 +166,9 @@ export async function getServerSideProps(context: any) {
  	const csrfTokenData = await getCsrfToken(context);
 	const session = await getSession(context);
 	const baseURL = `http://${context.req.headers.host}`;
+	const user: User = session?.user as User;
+	const username = user.username;
+  
 
 	if (!session) {
 		return {
@@ -171,7 +180,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		let response = await fetch (`${baseURL}/api/get/get_user?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_user?username=${username}`, {
 		  	method: 'GET',
 		})
 	

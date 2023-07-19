@@ -10,8 +10,15 @@ import { useRouter } from 'next/router';
 import { getProviders, getCsrfToken } from 'next-auth/react';
 import { useSession, getSession } from 'next-auth/react';
 
+interface User {
+	name?: string | null | undefined;
+	email?: string | null | undefined;
+	username: string;
+}  
 
-export default function Account({personalInfo, admin}) {
+
+
+export default function Account({personalInfo, admin}: any) {
 	const [addMenu, setAddMenu] = useState<ReactElement>();
 
 	const [info, setInfo] = useState({
@@ -21,6 +28,9 @@ export default function Account({personalInfo, admin}) {
 		gender: ''
 	});
 	const {data: session} = useSession();
+	const user: User = session?.user as User;
+	const username = user.username;
+
 
 	useEffect(() => {
 		setInfo(personalInfo);
@@ -75,7 +85,7 @@ export default function Account({personalInfo, admin}) {
 								<tbody>
 									<tr>
 										<th><p>Username: </p></th>
-										<td><p>{session?.user.username}</p></td>
+										<td><p>{username}</p></td>
 									</tr>
 									<tr>
 										<th><p>First Name: </p></th>
@@ -111,6 +121,9 @@ export default function Account({personalInfo, admin}) {
 export async function getServerSideProps(context: any) {
 	const session = await getSession(context);
 	const baseURL = `http://${context.req.headers.host}`;
+	const user: User = session?.user as User;
+	const username = user.username;
+
 
 	let personalInfo;
 
@@ -124,7 +137,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		let response = await fetch (`${process.env.URL}/api/get/get_personal_info?username=${session.user.username}`, {
+		let response = await fetch (`${process.env.URL}/api/get/get_personal_info?username=${username}`, {
 		  method: 'GET',
 		})
 	
@@ -140,7 +153,7 @@ export async function getServerSideProps(context: any) {
 	  }
 
 	  try {
-		let response = await fetch (`${baseURL}/api/get/get_user?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_user?username=${username}`, {
 		  	method: 'GET',
 		})
 	

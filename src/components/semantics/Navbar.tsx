@@ -61,7 +61,7 @@ export default function Navbar() {
   )
 }
 
-export function ProductNavbar({ onData }) {
+export function ProductNavbar({ onData }: any) {
 
   const { data: session } = useSession();
   const [accountButton, setAccountButton] = useState<ReactElement>(React.createElement(Button, {text: "Log in", url: "/login"}));

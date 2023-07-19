@@ -4,7 +4,7 @@ import style from '@/styles/components/FilterTab.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
-export default function FilterTab({ onData }) {
+export default function FilterTab({ onData }: any) {
 
 	const handleFormSubmit = (event: any) => {
 		event.preventDefault();

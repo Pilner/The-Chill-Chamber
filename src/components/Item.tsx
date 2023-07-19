@@ -8,17 +8,14 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 import { useSession, getSession } from 'next-auth/react';
 
-
-interface ItemProps {
-  brand: string,
-  model: string,
-  img: string,
-  price: number,
-  rating: number,
-  horsepower: number
+interface User {
+  name?: string | null | undefined;
+  email?: string | null | undefined;
+  username: string;
 }
 
-export default function Item({brand, model, img, price, horsepower, rating}: ItemProps) {
+
+export default function Item({brand, model, img, price, horsepower, rating}: any) {
 
   const getterFunction = async (data: boolean) => {
     addToCart(model);
@@ -70,11 +67,12 @@ export default function Item({brand, model, img, price, horsepower, rating}: Ite
   )
 }
 
-async function addToCart(model) {
-  const session = await getSession();
+async function addToCart(model: any) {
+  const session = await getSession();  
   
   // console.log(session);
-  const username = session?.user?.username;
+  const user: User = session?.user as User;
+  const username = user.username;
   let data = {model, username};
 
   try {

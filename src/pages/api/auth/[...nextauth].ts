@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import CredentialsProvider from 'next-auth/providers/credentials';
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import bcrypt from 'bcrypt';

@@ -10,6 +10,12 @@ import { useRouter } from 'next/router';
 import { getProviders, getCsrfToken } from 'next-auth/react';
 import { useSession, getSession } from 'next-auth/react';
 
+interface User {
+	name?: string | null | undefined;
+	email?: string | null | undefined;
+	username: string;
+}  
+
 
 export default function Account({ admin }: any) {
 	const [addMenu, setAddMenu] = useState<ReactElement>();
@@ -76,6 +82,10 @@ export async function getServerSideProps(context: any) {
 	const session = await getSession(context);
 	const baseURL = `http://${context.req.headers.host}`;
 
+	const user: User = session?.user as User;
+	const username = user.username;
+
+
 	console.log(context);
 
 	if (!session) {
@@ -88,7 +98,7 @@ export async function getServerSideProps(context: any) {
 	}
 
 	try {
-		let response = await fetch (`${baseURL}/api/get/get_user?username=${session.user.username}`, {
+		let response = await fetch (`${baseURL}/api/get/get_user?username=${username}`, {
 		  	method: 'GET',
 		})
 	
