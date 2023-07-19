@@ -1,12 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface ButtonProps {
-  text: string;
-  url: string;
-}
-
-export default function Button({text, url}: ButtonProps) {
+export default function Button({text, url}: any) {
   return (
     <div className={`button-div`}>
       <Link href={url}>
@@ -16,7 +11,7 @@ export default function Button({text, url}: ButtonProps) {
   )
 }
 
-export function APIButton({text, onData}: ButtonProps) {
+export function APIButton({text, onData}: any) {
   
   const handleClick = () => {
     onData();
