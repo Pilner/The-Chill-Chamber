@@ -66,7 +66,7 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
         </div>
         <div className={style.item_info}>
           <p><b>{`${brand} ${model}`}</b></p>
-          <p>{`${horsepower} Horsepowers`}</p>
+          <p>{`${horsepower} HP`}</p>
           <p>{`₱${parseInt(price).toLocaleString(undefined, {minimumFractionDigits: 2})}`}</p>
           {stars.map((star, i) => {
             return <FontAwesomeIcon key={i} color='gold' icon={faStar} />
