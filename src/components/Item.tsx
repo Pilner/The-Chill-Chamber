@@ -26,7 +26,7 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
 	const [cartButton, setCartButton] = useState<ReactElement>()
 
   const getterFunction = async (data: boolean) => {
-    addToCart(model);
+    addToCart(aircon_id);
     alert('Item added to cart!');
 
   }
@@ -47,7 +47,7 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
         APIButton, {text: 'Add to cart', onData: getterFunction}
       ));
     }
-  })
+  }, [session])
 
 
   return (
@@ -85,12 +85,12 @@ export default function Item({aircon_id, brand, model, img, price, horsepower, r
   )
 }
 
-async function addToCart(model) {
+async function addToCart(aircon_id) {
   const session = await getSession();
   
   // console.log(session);
   const username = session?.user?.username;
-  let data = {model, username};
+  let data = {aircon_id, username};
 
   try {
     const response = await fetch('/api/post/add_cart', {

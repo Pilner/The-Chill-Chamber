@@ -7,14 +7,14 @@ import style from '@/styles/components/CartItem.module.css';
 export default function CartItem({item, onData}) {
 
 	const handleClick = () => {
-		onData(item.model);
+		onData(item.aircon_id);
 	}
 
   return (
 	<div className={style.item}>
 		<div className={style.picture}>
 			<div>
-				<Link href={`/products/${item.model}`}>
+				<Link href={`/products/${item.aircon_id}`}>
 					<Image
 						src={item.image_url}
 						width={0}

@@ -25,7 +25,7 @@ export default function ProductPage({ airconData, response, admin, session }: an
 	const [cartButton, setCartButton] = useState<ReactElement>()
 
 	const getterFunction = async (data: boolean) => {
-		addToCart(aircon.model);
+		addToCart(aircon.aircon_id);
 		alert('Item added to cart!');
 	
 	  }	
@@ -175,12 +175,12 @@ export default function ProductPage({ airconData, response, admin, session }: an
   )
 }
 
-async function addToCart(model: string) {
+async function addToCart(aircon_id: string) {
 	const session = await getSession();
 	
 	// console.log(session);
 	const username = session?.user?.username;
-	let data = {model, username};
+	let data = {aircon_id, username};
   
 	try {
 	  const response = await fetch('/api/post/add_cart', {
@@ -214,9 +214,7 @@ export async function getServerSideProps(context: any) {
 	const {id} = params;
 	const baseURL = `http://${context.req.headers.host}`;
 
-	
-	// console.log(id);
-	
+		
 	try {
 		const [response1, response2] = await Promise.all([
 			fetch (`${baseURL}/api/get/get_aircon?aircon_id=${id}`, {

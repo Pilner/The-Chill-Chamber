@@ -22,13 +22,14 @@ const options: NextAuthOptions = {
           // Invalid credentials, authentication failed
           return null;
         }
+        const client = await pool.connect();
 
         // Perform custom authentication logic
-        const userExists = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
+        const userExists = await client.query('SELECT * FROM users WHERE username = $1', [username]);
 
         if (userExists.rowCount === 0) {
           // User does not exist, authentication failed
-    
+          client.release();
           return null;
         } else {
           const user = userExists.rows[0];
@@ -36,10 +37,12 @@ const options: NextAuthOptions = {
     
           if (!passwordMatch) {
           // Password does not match, authentication failed
+          const client = await pool.connect();
           return null;
           }
     
           // Authentication successful, return the user object
+          const client = await pool.connect();
           return {
             id: user.user_id,
             username: user.username,
@@ -49,6 +52,7 @@ const options: NextAuthOptions = {
 
       } catch (error) {
           console.error('Authentication error:', error);
+          const client = await pool.connect();
           return null;
       }
       },

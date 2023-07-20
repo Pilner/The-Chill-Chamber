@@ -6,7 +6,7 @@ import { useSession, getSession } from 'next-auth/react';
 
 export default async function RemoveCartItem(req: NextApiRequest, res: NextApiResponse) {
 
-	const { username, model } = req.query;
+	const { username, aircon_id } = req.query;
 
 	// res.json({ username, model });
 
@@ -15,9 +15,6 @@ export default async function RemoveCartItem(req: NextApiRequest, res: NextApiRe
 
 		const users = await client.query(`SELECT * FROM users WHERE username = $1`, [username]);
 		let user_id = users.rows[0].user_id;
-
-		const aircons = await client.query(`SELECT * FROM aircons WHERE model = $1`, [model]);
-		let aircon_id = aircons.rows[0].aircon_id;
 
 		const cart = await client.query(`SELECT * FROM cart WHERE user_id = $1`, [user_id]);
 

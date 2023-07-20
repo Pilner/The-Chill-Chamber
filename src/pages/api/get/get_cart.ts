@@ -20,9 +20,9 @@ export default async function getAircons(req: NextApiRequest, res: NextApiRespon
 		} else {
 			user_id = users.rows[0].user_id;
 		}
-
+		
 		const cart = await client.query(`SELECT * FROM cart WHERE user_id = $1`, [user_id]);
-
+		
 		for (let i = 0; i < cart.rowCount; i++) {
 			const aircon = await client.query(`SELECT * FROM aircons WHERE aircon_id = $1`, [cart.rows[i].aircon_id]);
 			aircon.rows[0].quantity = cart.rows[i].quantity;
