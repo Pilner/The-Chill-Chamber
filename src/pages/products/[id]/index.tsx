@@ -41,7 +41,6 @@ export default function ProductPage({ airconData, response, admin, session }: an
 		cooling_capacity: "0",
 		star_rating: 0,
 		description: 'description',
-		image_url: 'image_url',
 	});
 
 
