@@ -15,7 +15,6 @@ export default async function getSearchedAircons(req: NextApiRequest, res: NextA
 			OR model ILIKE $1
 			OR type ILIKE $1
 			OR feature ILIKE $1
-			OR description ILIKE $1
 		`, [`%${search}%`]);
 		
 		client.release();
