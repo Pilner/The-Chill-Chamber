@@ -6,21 +6,18 @@ export default async function AddCart(req: NextApiRequest, res: NextApiResponse)
 		return res.status(405).json({error: "Method Not Allowed"});
 	}
 
-	const { username, model } = req.body;
+	const { username, aircon_id } = req.body;
 
 	try {
 		const client = await pool.connect();
-		let user_id, aircon_id, quantity;
+		let user_id, quantity;
 
 
-		const aircons = await client.query(`SELECT * FROM aircons WHERE model = $1`, [model]);
+		const aircons = await client.query(`SELECT * FROM aircons WHERE aircon_id = $1`, [aircon_id]);
 
 		if (aircons.rowCount === 0) {
 			res.status(404).send("No aircon exists!");
-		} else {
-			aircon_id = aircons.rows[0].aircon_id;
-		}
-
+		} 
 		const users = await client.query(`SELECT * FROM users WHERE username = $1`, [username]);
 
 		if (users.rowCount === 0) {

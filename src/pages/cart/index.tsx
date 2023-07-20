@@ -13,24 +13,25 @@ import Button from '@/components/Button';
 import Line from '@/components/Line';
 import CartItem from '@/components/CartItem';
 
-export default function Cart({cartData}) {
+export default function Cart({cartData, test}) {
+	console.log(cartData);
 	const [cart, setCart] = useState(cartData);
 	const router = useRouter();
 
 	let shippingFee = 50;
 
-	const getterFunction = async (model: string) => {
-		removeCartItem(model);
+	const getterFunction = async (aircon_id: string) => {
+		removeCartItem(aircon_id);
 	}
 
-	async function removeCartItem(model) {
+	async function removeCartItem(aircon_id) {
 		const session = await getSession();
 		const username = session?.user?.username;
 	
 		// console.log("test");
 	
 		try {
-			const response = await fetch(`/api/delete/remove_order?username=${username}&model=${model}`, {
+			const response = await fetch(`/api/delete/remove_order?username=${username}&aircon_id=${aircon_id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'
@@ -109,6 +110,7 @@ export default function Cart({cartData}) {
 					</div>
 				</div>
 			</div>
+
 		</div>
       </section>
       <Footer />
@@ -182,5 +184,6 @@ export async function getServerSideProps(context: any) {
 
 	} catch (err) {
 		console.error(`Error: ${err}`);
+		return {props: {}}
 	}
 }
