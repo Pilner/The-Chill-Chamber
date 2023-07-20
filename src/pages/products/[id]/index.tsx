@@ -25,7 +25,7 @@ export default function ProductPage({ airconData, response, admin, session }: an
 	const [cartButton, setCartButton] = useState<ReactElement>()
 
 	const getterFunction = async (data: boolean) => {
-		addToCart(aircon.aircon_id);
+		addToCart(airconData.aircon_id);
 		alert('Item added to cart!');
 	
 	  }	
@@ -41,7 +41,6 @@ export default function ProductPage({ airconData, response, admin, session }: an
 		cooling_capacity: "0",
 		star_rating: 0,
 		description: 'description',
-		image_url: 'image_url',
 	});
 
 

@@ -76,20 +76,20 @@ export default function FilterTab({ onData }) {
 					  <label htmlFor="any_hp">Any</label>
 				  </div>
 				  <div>
-					  <input type="radio" value="2.5+" id="hp2.5" name="horsepower" />
-					  <label htmlFor="hp2.5">2.5 HP & Above</label>
+					  <input type="radio" value="2.5" id="hp2.5" name="horsepower" />
+					  <label htmlFor="hp2.5">HP &gt; 2.5</label>
 				  </div>
 				  <div>
 					  <input type="radio" value="2.0" id="hp2" name="horsepower" />
-					  <label htmlFor="hp2">2.0 HP</label>
+					  <label htmlFor="hp2">HP &lt; 2.0</label>
 				  </div>
 				  <div>
 					  <input type="radio" value="1.5" id="hp1.5" name="horsepower" />
-					  <label htmlFor="hp1.5">1.5 HP</label>
+					  <label htmlFor="hp1.5">HP &lt; 1.5</label>
 				  </div>
 				  <div>
 					  <input type="radio" value="1.0" id="hp1.0" name="horsepower" />
-					  <label htmlFor="hp1.0">1.0 HP</label>
+					  <label htmlFor="hp1.0">HP &lt; 1.0</label>
 				  </div>
 			  </div>
 			  <Line />

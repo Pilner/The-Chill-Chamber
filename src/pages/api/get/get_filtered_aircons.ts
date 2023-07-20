@@ -80,9 +80,15 @@ const generateQuery = (minPrice, maxPrice, type, feature, horsepower, minStar, m
 	}
   
 	if (horsepower !== undefined && horsepower !== 'any') {
-	  conditions.push(`horsepower <= $${paramIndex}`);
-	  params.push(horsepower);
-	  paramIndex++;
+		if (horsepower === '2.5') {
+			conditions.push(`horsepower > $${paramIndex}`);
+			params.push(horsepower);
+			paramIndex++;			
+		} else {
+			conditions.push(`horsepower <= $${paramIndex}`);
+			params.push(horsepower);
+			paramIndex++;
+		}
 	}
   
 	if ((minStar !== undefined && minStar !== '') || (maxStar !== undefined && maxStar !== '')) {
