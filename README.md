@@ -1,4 +1,4 @@
-<center><img src=".\TCClogo.png" width = "250" height = "250" ></center>
+<center><img src=".\public/logotcc.png" width = "250" height = "250" ></center>
 <center><h1>The Chill Chamber</h1></center>
 
 **The Chill Chamber** is an aircon reselling website created with [Next.js](https://nextjs.org/) bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -50,5 +50,13 @@ Ths project uses the following open source packages:
 ## Support
 
 You can donate to us through our GCash accounts. Your donations would greatly help us in our studies.
+
+**Fabian Railey A. Victuelles (Full-Stack Developer)**
+
+<img src=".\Rgcash.jpg" width = "250" height = "250" >
+
+&nbsp;
+
+**Jose Ezra Nazarene B. Vergabera (Web Designer)**
 
 <img src=".\EZgcash.jpg" width = "250" height = "250" >
