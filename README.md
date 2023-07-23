@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<center><img src=".\TCClogo.png" width = "250" height = "250" ></center>
+<center><h1>The Chill Chamber</h1></center>
+
+**The Chill Chamber** is an aircon reselling website created with [Next.js](https://nextjs.org/) bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -36,3 +39,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Credits
+Ths project uses the following open source packages:
+- [Javascript](https://www.javascript.com/)
+- [Next.js](https://nextjs.org/)
+- [PostgreSQL](https://www.pgsclusters.com/pgs-tutorials/)
+
+
+## Support
+
+You can donate to us through our GCash accounts. Your donations would greatly help us in our studies.
+
+<img src=".\EZgcash.jpg" width = "250" height = "250" >
