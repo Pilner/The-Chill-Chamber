@@ -49,7 +49,7 @@ export default function About() {
       <div className='container'>
         <p className="hero-title">Meet The Team</p>
         <div className={style.memberGroup}>
-          <Member url="/ezra-pic.png" role="Web Designer" name="Jose Ezra Nazarane Vergabera" />
+          <Member url="/ezra-pic.png" role="Web Designer" name="Jose Ezra Nazarene Vergabera" />
           <Member url="/railey-pic.png" role="Full-Stack Developer" name="Fabian Railey Victuelles" />
         </div>
       </div>
