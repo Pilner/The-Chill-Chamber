@@ -14,6 +14,9 @@ import { useSession, getSession } from 'next-auth/react';
 
 
 export default function EditAirconPage({airconData}: any) {
+
+
+
 	const [aircon, setAircon] = useState({});
 	const router = useRouter();
 
@@ -34,8 +37,6 @@ export default function EditAirconPage({airconData}: any) {
 		const image_url = event.target.imageUrl.value;
 		const description = event.target.description.value;
 
-		// console.log({brand, model, type, feature, cspf, star_rating, horsepower, cooling_capacity, price, image_url, description});
-
 		try {
 			const response = await fetch('/api/post/edit_aircon', {
 				method: 'POST',
@@ -47,7 +48,7 @@ export default function EditAirconPage({airconData}: any) {
 
 			const responseData = await response.text();
 			if (response.ok) {
-				router.push(`/products/${model}`);
+				router.push(`/products/${router.query.id}`);
         alert("Edit Product Successfully")
 			} else if (response.status === 404) {
 				setErrText(React.createElement('p', {style: {color:"red"}}, responseData));
@@ -64,7 +65,6 @@ export default function EditAirconPage({airconData}: any) {
 	useEffect(() => {
 		setAircon(airconData);
 	}, [airconData]);
-	console.log(aircon);
 
 	return (
 		<>
@@ -181,7 +181,6 @@ export async function getServerSideProps(context: any) {
 
 		if (response.ok) {
 			airconData = await response.json();
-			console.log(airconData);
 		} else {
 			throw new Error('Something went wrong');
 		}
