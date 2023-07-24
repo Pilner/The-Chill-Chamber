@@ -1,51 +1,40 @@
-<center><img src=".\public\logotcc.png" width = "250" height = "250" ></center>
-<center><h1>The Chill Chamber</h1></center>
+<p align="center">
+  <img src="public/logotcc.png" width = 30%/>
+</p>
+<h1 align="center">The Chill Chamber</h1>
 
-**The Chill Chamber** is an aircon reselling website created with [Next.js](https://nextjs.org/) bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**The Chill Chamber** is an aircon reselling website created with [Next.js](https://nextjs.org/) - [PostgreSQL](https://www.pgsclusters.com/pgs-tutorials/).
 
-## Getting Started
+## How to use
+*Note: Make sure you have a [Node.js](https://nodejs.org/en/) installed. To check, run `node -v` in your terminal*
 
-First, run the development server:
-
-```bash
+1. First clone this git repository to your local device
+```
+git clone https://github.com/Pilner/The-Chill-Chamber.git
+cd The-Chill-Chamber
+```
+2. Download all the dependencies and packages needed in this repository
+```
+npm install
+```
+3. Create an .env.local file and fill up environment variables
+```
+touch .env.local
+```
+4. Run the program
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+5. View the website on browser at
+```
+localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Collaborators
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Credits
-Ths project uses the following open source packages:
-- [Javascript](https://www.javascript.com/)
-- [Next.js](https://nextjs.org/)
-- [PostgreSQL](https://www.pgsclusters.com/pgs-tutorials/)
-
+- Fabian Railey A. Victuelles
+- Jose Ezra Nazarene B. Vergabera
 
 ## Support
 
@@ -59,4 +48,17 @@ You can donate to us through our GCash accounts. Your donations would greatly he
 
 **Jose Ezra Nazarene B. Vergabera (Web Designer)**
 
-<img src=".\public\EZgcash.jpg" width = "250" height = "250" >
+<img src=".\public\EZgcash.jpg" width = 50%>
+
+## Licenses
+
+MIT License
+
+Copyright (c) 2023 Vergabera, Victuelles
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
