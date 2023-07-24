@@ -42,7 +42,7 @@ You can donate to us through our GCash accounts. Your donations would greatly he
 
 **Fabian Railey A. Victuelles (Full-Stack Developer)**
 
-<img src=".\public\Rgcash.jpeg" width = "250" height = "250" >
+<img src=".\public\Rgcash.jpeg" width = 50% >
 
 &nbsp;
 
